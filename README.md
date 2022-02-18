@@ -31,7 +31,8 @@ In term of hardware:
 - Pulsar cluster (3 brokers)
 &nbsp;
 ## Guide Summary
-!!! note Summary of Content 
+```
+!!! Summary of Content 
 - Deploying Binaries on Each Node
   - Creating directories
   - Changing directory ownership
@@ -69,7 +70,7 @@ In term of hardware:
   - Start Pulsar Broker
   - Confirming Brokers available
 - Conclusion
-!!!
+```
 
 &nbsp;
 # 1) Deploying Binaries On Each Node
