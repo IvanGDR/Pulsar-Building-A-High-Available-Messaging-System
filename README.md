@@ -117,6 +117,7 @@ Creating myid file within datadir=/opt/zookeeper/data
 `
 ```
 Notes for configuration of "myid" files within each Zookeeper node (Local)
+
 Node 0: 101.36.207 -> insert 1
 Node 1: 101.36.165 -> insert 2
 Node 2: 101.36.179 -> insert 3
@@ -194,7 +195,7 @@ Creating myid file within datadir=/opt/zookeeper/data_global
 `
 ```
 Notes for configuration of "myid" files within each Zookeeper node (Global)
-Note:
+
 Node 0: 101.36.207 -> insert 1
 Node 1: 101.36.165 -> insert 2
 Node 2: 101.36.179 -> insert 3
