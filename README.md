@@ -115,6 +115,7 @@ Node 2: public hostname: 101.36.179
 `
 Creating myid file within datadir=/opt/zookeeper/data
 `
+```
 !!! note Notes for configuration of "myid" files within each Zookeeper node (Local)
 Node 0: 101.36.207 -> insert 1
 Node 1: 101.36.165 -> insert 2
@@ -124,7 +125,7 @@ echo "1" > /opt/zookeeper/data/myid
 echo "2" > /opt/zookeeper/data/myid
 echo "3" > /opt/zookeeper/data/myid
 !!!
-
+```
 ### Setting up zoo.cfg files for Local Zookeeper
 
 Main variables, according to pulsar documentation:
