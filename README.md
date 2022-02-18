@@ -116,7 +116,7 @@ Node 2: public hostname: 101.36.179
 Creating myid file within datadir=/opt/zookeeper/data
 `
 ```
-!!! note Notes for configuration of "myid" files within each Zookeeper node (Local)
+Notes for configuration of "myid" files within each Zookeeper node (Local)
 Node 0: 101.36.207 -> insert 1
 Node 1: 101.36.165 -> insert 2
 Node 2: 101.36.179 -> insert 3
@@ -124,7 +124,6 @@ Node 2: 101.36.179 -> insert 3
 echo "1" > /opt/zookeeper/data/myid
 echo "2" > /opt/zookeeper/data/myid
 echo "3" > /opt/zookeeper/data/myid
-!!!
 ```
 ### Setting up zoo.cfg files for Local Zookeeper
 
@@ -193,7 +192,8 @@ Verifying Znode has been created as expected:
 `
 Creating myid file within datadir=/opt/zookeeper/data_global
 `
-!!! note Notes for configuration of "myid" files within each Zookeeper node (Global)
+```
+Notes for configuration of "myid" files within each Zookeeper node (Global)
 Note:
 Node 0: 101.36.207 -> insert 1
 Node 1: 101.36.165 -> insert 2
@@ -202,7 +202,7 @@ Node 2: 101.36.179 -> insert 3
 echo "1" > /opt/zookeeper/data_global/myid
 echo "2" > /opt/zookeeper/data_global/myid
 echo "3" > /opt/zookeeper/data_global/myid
-!!!
+```
 ### Setting up zoo_pulsar_global.cfg file for Global Zookeeper
 Main variables, according to Pulsar documentation:
 ```js
@@ -225,7 +225,8 @@ server.3=101.36.179:2889:3889
 >Note 2: If another cluster is added to the pulsar instance, within this file the new zk nodes IP’s will need to be added and additionally we may use  the :observer option. E.g. adding 2 more clusters of 3 nodes ensemble each and making a 7 nodes ensemble using the observer option to avoid election we can tolerate up to 3 nodes down or an entire region to be down  (2 x 3 Nodes Down+1=7). The modified file would look like this:
 
 &nbsp;
-!!! note Instructions to add new Pulsar cluster Zookeeper Configuration (modified: zoo_pulsar_global.cfg file)
+```
+Instructions to add new Pulsar cluster Zookeeper Configuration (modified: zoo_pulsar_global.cfg file)
 
 peerType=observer
 server.1=101.36.207:2889:3889
@@ -239,7 +240,7 @@ server.6=zk-6IP-Region2:2889:3889:observer
 server.7=zk-7IP-Region3:2889:3889
 server.8=zk-8IP-Region3:2889:3889
 server.9=zk-9IP-Region3:22889:3889:observer 
-!!!
+```
 When adding two new clusters for example as shown above, the new configuration file will have to be the same on all ZK nodes. where myid files for the new two local ZK (2181) will contain 1,2,3 and 1,2,3 also for the global ZK (2184) will be 4,5,6 and 7,8,9 following the example above.
 
 ### Start/Stop Global Zookeeper
@@ -314,10 +315,12 @@ metadataServiceUri=zk+hierarchical:
 #`zkServers` is deprecated in favor of using `metadataServiceUri`
 #zkServers=localhost:2181
 ```
-!!! note Important
+```
+Important
 **Note 1:** metadataServiceUri points to Local ZK IP’s.
 **Note 2:** in metadataServiceUri use “;” instead of “,” for IP:PORT separation.
-!!!
+```
+
 ## Sending BookKeper metadata to Zookeeper Local
 Just from one Bookeeper node
 ```js
