@@ -32,7 +32,6 @@ In term of hardware:
 &nbsp;
 ## Guide Summary
 ```
-!!! Summary of Content 
 - Deploying Binaries on Each Node
   - Creating directories
   - Changing directory ownership
