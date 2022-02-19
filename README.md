@@ -90,7 +90,7 @@ Instead downloading the binaries individually on each remote machine, using e.g.
 
 ```
 /Downloads/Project_Pulsar: scp -i /path_to/ssh_key \
-file-name.bin.tar.gz igdrn@<ip-hostname>:/opt/<directory_name>/
+file-name.bin.tar.gz igdr@<ip-hostname>:/opt/<directory_name>/
 ```
 
 Here <directory_name> is the directory created initially.
