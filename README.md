@@ -254,7 +254,7 @@ start /opt/zookeeper/apache-zookeeper-3.5.8-bin/conf/zoo_pulsar_global.cfg
 &nbsp;
 **Stop global Zookeeper**
 ```js
-igdr@ip101-36-207:/opt/zookeeper/apache-zookeeper-3.5.8-bin$
+igdr@ip-101-36-207:/opt/zookeeper/apache-zookeeper-3.5.8-bin$
 ./bin/zkServer.sh \
 stop /opt/zookeeper/apache-zookeeper-3.5.8-bin/conf/zoo_pulsar_global.cfg
 ```
@@ -268,13 +268,13 @@ igdr@ip-101-36-207:/opt/zookeeper/apache-zookeeper-3.5.8-bin$
 ### Creating Znode for Global Zookeeper Metadata
 Creating the Znode fron one Zk client is enough
 ```js
-[zk: 10.101.36.207:2184(CONNECTED) 1] create /PulsarZkGlobal
+[zk: 101.36.207:2184(CONNECTED) 1] create /PulsarZkGlobal
 Created /PulsarZkGlobal
 ```
 
 Verifying Znode for Global Pulsar metadata has been created:
 ```js
-[zk: 10.101.36.207:2184(CONNECTED) 2] ls /
+[zk: 101.36.207:2184(CONNECTED) 2] ls /
 [PulsarZkGlobal, zookeeper]
 ```
 
@@ -307,7 +307,7 @@ Verifying Znode for BookKeeper metadata has been created:
 Main variables, according to Pulsar documentation:
 ```js
 bookiePort=3181
-advertisedAddress=10.101.33.97
+advertisedAddress=101.33.97
 journalDirectories=/opt/bookkeeper/data/bk-journals
 ledgerStorageClass=org.apache.bookkeeper.bookie.storage.ldb.DbLedgerStorage
 ledgerDirectories=/opt/bookkeeper/data/bk-ledgers
@@ -342,7 +342,7 @@ INFO  Successfully formatted BookKeeper metadata
 ```
 Additionally check BookKeeper Znode in one of the “local” Zookeeper servers
 ```js
-[zk: 10.101.36.207:2181(CONNECTED) 8] ls /PulsarZkBk/ledgers
+[zk: 101.36.207:2181(CONNECTED) 8] ls /PulsarZkBk/ledgers
 [INSTANCEID, LAYOUT, available]
 ```
 
@@ -385,7 +385,7 @@ brokerServicePortTls=6651
 webServicePort=8080
 webServicePortTls=8443
 bindAddress=0.0.0.0
-advertisedAddress=10.101.32.178
+advertisedAddress=101.32.178
 clusterName=Chinchaysuyo
 bookkeeperMetadataServiceUri=zk+hierarchical:
 //101.36.207:2181;101.36.165:2181;101.36.179:2181/PulsarZkBk/ledgers
