@@ -24,7 +24,7 @@ The open source software to be used are the following binaries:
 - bookkeeper-server-4.11.1-bin.tar.gz
 - apache-zookeeper-3.5.8-bin.tar.gz
 
-In term of hardware:
+In terms of hardware:
 
 - Zookeeper ensemble (3 nodes)
 - Bookkeeper cluster (3 bookies)
