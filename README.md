@@ -177,7 +177,7 @@ igdr@ip-101-36-207:/opt/zookeeper/apache-zookeeper-3.5.8-bin$
 ```
 
 ### Creating Znode for Local Zookeeper Metadata
-Creating the Znode fron one Zk client is enough
+Creating the Znode from one Zk client is enough
 ```js
 [zk: 101.36.207:2181(CONNECTED) 0] create /PulsarZkLocal
 Created /PulsarZkLocal
