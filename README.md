@@ -262,7 +262,7 @@ stop /opt/zookeeper/apache-zookeeper-3.5.8-bin/conf/zoo_pulsar_global.cfg
 ### Launch Client Zookeper for Global Zookeeper
 ```js
 igdr@ip-101-36-207:/opt/zookeeper/apache-zookeeper-3.5.8-bin$
-./bin/zkCli.sh -server 10.101.36.207:2184
+./bin/zkCli.sh -server 101.36.207:2184
 ```
 
 ### Creating Znode for Global Zookeeper Metadata
