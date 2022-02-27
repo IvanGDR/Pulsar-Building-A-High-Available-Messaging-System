@@ -59,7 +59,7 @@ In terms of hardware:
   - Cluster Info
   - Creating a Znode for BookKeeper metadata in Zookeeper Local
   - Setting up bk_server.conf file for BookKeeper
-  - Sending BookKeper metadata to Zookeeper Local
+  - Sending BookKeeper metadata to Zookeeper Local
   - Start BookKeeper
 - Pulsar Configuration
   - Cluster Info
