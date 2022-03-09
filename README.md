@@ -6,15 +6,15 @@
 ---
 &nbsp;
 
->This second part of this blog series over apache Pulsar, is all about buidling the stack. The intention is to provide a cookbook guide for you to do it.
-It is important to highliight that I am trying to provide a deployment that can offer high availability properties hence the use of a zookeeper ensemble. According to documentation, it may be acceptable to use just one Zookeeper node as the workload pushed from Pulsar and Bookeeper is not expected to be a real constraint but a single point of failure is expected to be assumed in this way.
+>This second part of this blog series over apache Pulsar, is all about building the stack. The intention is to provide a cookbook guide for you to do it.
+It is important to highlight that I am trying to provide a deployment that can offer high availability properties hence the use of a zookeeper ensemble. According to documentation, it may be acceptable to use just one Zookeeper node as the workload pushed from Pulsar and BookKeeper is not expected to be a real constraint but a single point of failure is expected to be assumed in this way.
 
 &nbsp;
 ## Context
 From an architectural point of view, the aim is to build a Pulsar instance with multi cluster properties and functions worker enabled within brokers.
 
 This guide will walk you step by step to deploy a Pulsar instance with one cluster but prepared already to extend the deployment further, including more Pulsar clusters at a later stage.
-Additionally all the stack will be built up separately, Zookeeper, Bookeeper and Pulsar all will be deployed and installed on their own cluster/ensemble and configured accordingly so they can interact with each other.
+Additionally all the stack will be built up separately, Zookeeper, BookKeeper and Pulsar all will be deployed and installed on their own cluster/ensemble and configured accordingly so they can interact with each other.
 
 The procedure followed here is for a multi cluster baremetal deployment.
 &nbsp;
@@ -27,7 +27,7 @@ The open source software to be used are the following binaries:
 In terms of hardware:
 
 - Zookeeper ensemble (3 nodes)
-- Bookkeeper cluster (3 bookies)
+- BookKeeper cluster (3 bookies)
 - Pulsar cluster (3 brokers)
 &nbsp;
 ## Guide Summary
@@ -45,7 +45,7 @@ In terms of hardware:
     - Configuring Local Zookeeper
     - Setting up zoo.cfg file for Local Zookeeper
     - Start/Stop Local Zookeeper
-    - Launch Client Zookeper for Local Zookeeper
+    - Launch Client Zookeeper for Local Zookeeper
     - Creating Znode for Local Zookeeper Metadata
   - Setting up Global Zookeeper for Pulsar (store)
     - Cluster Info
@@ -53,7 +53,7 @@ In terms of hardware:
     - Setting up zoo_pulsar_global.cfg file for Global Zookeeper
       - Instructions to add new Pulsar cluster Zookeeper Configuration
     - Start/Stop Global Zookeeper
-    - Launch Client Zookeper for Global Zookeeper
+    - Launch Client Zookeeper for Global Zookeeper
     - Creating Znode for Global Zookeeper Metadata
 - Bookkeeper Configuration
   - Cluster Info
@@ -323,7 +323,7 @@ Important
 ```
 
 ## Sending BookKeper metadata to Zookeeper Local
-Just from one Bookeeper node
+Just from one BookKeeper node
 ```js
 igdr@ip-101-33-97:/opt/bookkeeper/bookkeeper-server-4.11.1$
 ./bin/bookkeeper shell metaformat
@@ -460,5 +460,5 @@ Output after execution:
 ```
 # Conclusion
 
-Implementing a high available Pulsar instance is relatively easy. All the configurations shown in this guide need to be done as many times as nodes are available in the Pulsar instance, except the metadata sent from BookKeepr to Zookeeper and from Pulsar to Zookeeper which is only done from one node. The Pulsar Cluster then should be ready to publish and consume messages and additionally use I/O functions.
-In the next and last blog of this series, I will analyse the logs generated when each of these componenets are initialised.
+Implementing a high available Pulsar instance is relatively easy. All the configurations shown in this guide need to be done as many times as nodes are available in the Pulsar instance, except the metadata sent from BookKeeper to Zookeeper and from Pulsar to Zookeeper which is only done from one node. The Pulsar Cluster then should be ready to publish and consume messages and additionally use I/O functions.
+In the next and last blog of this series, I will analyse the logs generated when each of these components are initialised.
